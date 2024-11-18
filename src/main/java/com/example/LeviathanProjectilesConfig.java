@@ -27,7 +27,7 @@ public interface LeviathanProjectilesConfig extends Config
 	@ConfigItem(
 			keyName = "style",
 			name = "Projectile Style",
-			description = "The message to show to the user when they login"
+			description = "The projectile style to use."
 	)
 	default Style style()
 	{
