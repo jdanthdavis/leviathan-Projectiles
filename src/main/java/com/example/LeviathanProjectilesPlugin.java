@@ -21,6 +21,7 @@ public class LeviathanProjectilesPlugin extends Plugin
 {
 	private static final int MAGIC_PROJECTILE = 2489;
 	private static final int RANGE_PROJECTILE = 2487;
+	private static final int MELEE_PROJECTILE = 2488;
 
 	@Inject
 	private Client client;
@@ -38,13 +39,13 @@ public class LeviathanProjectilesPlugin extends Plugin
 	public void onProjectileMoved(ProjectileMoved projectileMoved)
 	{
 		Projectile projectile = projectileMoved.getProjectile();
-		if (projectile.getId() == RANGE_PROJECTILE)
-		{
+
+		if (projectile.getId() == RANGE_PROJECTILE) {
 			replaceProjectile(projectile, config.style().getRange());
-		}
-		else if (projectile.getId() == MAGIC_PROJECTILE)
-		{
+		} else if (projectile.getId() == MAGIC_PROJECTILE) {
 			replaceProjectile(projectile, config.style().getMagic());
+		} else if (projectile.getId() == MELEE_PROJECTILE) {
+			replaceProjectile(projectile, config.style().getMelee());
 		}
 	}
 
